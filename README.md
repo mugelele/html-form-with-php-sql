@@ -1,4 +1,4 @@
-This is a simple web-based application that allows users to register student information through an HTML form. The project is designed to be self-configuring, meaning the PHP script handles the creation of the database and tables automatically upon the first submission.
+This is a simple web-pae that allows users to register student information through an HTML form. The project is designed to be self-configuring, meaning the PHP script handles the creation of the database and tables automatically upon the first submission.
 
 🚀 How to Run on Localhost
 To run this project on your computer, follow these steps:
