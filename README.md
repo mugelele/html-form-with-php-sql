@@ -34,6 +34,6 @@ Auto-Configuration: Automatically creates students_db and the student_info table
 
 Prepared Statements: Uses MySQLi prepared statements to protect against SQL injection.
 
-if you find any bug drop a comment and help me to fix it
+if you find any bug feel free to fix it
 
 Responsive Form: Includes fields for First Name, Second Name, Email, and Gender selection.
