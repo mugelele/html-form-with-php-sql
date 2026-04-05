@@ -8,9 +8,9 @@ $conn = new mysqli($host,$user,$pass);
 if($conn->connect_error){
     die("database not created".$conn->connect_error);
 }else{
-   $conn->query("CREATE DATABASE IF NOT EXISTS students_db");
+    $conn->query("CREATE DATABASE IF NOT EXISTS students_db");
 }
-//create table when the database "students" is selected
+//create table when the database "students_db" is selected
 if(mysqli_select_db($conn,"students_db")){
    $table = $conn->query(
         "CREATE TABLE IF NOT EXISTS student_info(
@@ -18,12 +18,13 @@ if(mysqli_select_db($conn,"students_db")){
         fname varchar(100) not null,
         sname varchar(100) not null,
         email varchar(20) not null,
-        gender varchar(5) not null,
+        gender varchar(255) not null,
         PRIMARY KEY (studentID)
         )
         "
     );
     //insert data only if the table is created
+    
     if($table){
         //check the method if is post
         if($_SERVER['REQUEST_METHOD'] === "POST"){
@@ -44,11 +45,26 @@ if(mysqli_select_db($conn,"students_db")){
                 echo"fail to register new student".$conn->error;
             }
         }
-        
+ 
     }else{
         echo "table not created".$conn->error;
+    }
+
+    //fetch data when the button is  clicked
+    if(isset($_GET['fetch'])){
+        $result = $conn->query("SELECT fname, sname FROM student_info WHERE studentID > 6 ");
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo $row['fname']." ".$row['sname'];
+                echo "<br>";
+            }
+        }else{
+            echo "no data found";
+        }
     }
     
 }else{
     echo"no database selected".$conn->error;
 }
+
+
