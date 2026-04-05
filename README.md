@@ -31,6 +31,7 @@ You should see a message saying: "new student registered successfully".
 
 🛠️ Features
 Auto-Configuration: Automatically creates students_db and the student_info table if they don't exist.
+you can fetch the data by clicking the button fetch
 
 Prepared Statements: Uses MySQLi prepared statements to protect against SQL injection.
 
