@@ -52,7 +52,7 @@ if(mysqli_select_db($conn,"students_db")){
 
     //fetch data when the button is  clicked
     if(isset($_GET['fetch'])){
-        $result = $conn->query("SELECT fname, sname FROM student_info WHERE studentID > 6 ");
+        $result = $conn->query("SELECT fname, sname FROM student_info ");
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 echo $row['fname']." ".$row['sname'];
