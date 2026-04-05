@@ -11,23 +11,26 @@ include 'action.php';
 <body bgcolor="gray">
     <form action="action.php" method="post">
         <label for="fname">First name</label><br>
-        <input type="text" placeholder="your first name" name="fname"><br>
+        <input  type="text" placeholder="your first name" name="fname" required><br>
 
         <label for="sname">Second name</label><br>
-        <input type="text" placeholder="your second name" name="sname"><br>
+        <input  type="text" placeholder="your second name" name="sname" required><br>
 
         <label for="fname">Email</label><br>
-        <input type="email" placeholder="enter your email" name="email"><br>
+        <input  type="email" placeholder="enter your email" name="email" required><br>
 
         <p>Gender</p>
         <label>Male</label>
-        <input type="radio" name="gender" value="male">
+        <input  type="radio" name="gender" value="male" required>
 
         <label>female</label>
-        <input type="radio" name="gender" value="female"><br><br>
+        <input  type="radio" name="gender" value="female" required><br><br>
 
         <button type="submit" name="submit">Submit</button>
         <button type="reset" name="reset">Reset</button>
+        <a href="index.php?fetch=true">Fetch</a>
     </form>
+
+
 </body>
 </html>
