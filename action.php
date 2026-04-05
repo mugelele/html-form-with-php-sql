@@ -5,10 +5,10 @@ $pass = "";
 //connection to server
 $conn = new mysqli($host,$user,$pass);
 //create db if connection is successfully
-if(!$conn->connect_error){
-    $conn->query("CREATE DATABASE IF NOT EXISTS students_db") or die("database not created".$conn->connect_error);
+if($conn->connect_error){
+    die("database not created".$conn->connect_error);
 }else{
-    echo "connection failed".$conn->connect_error;
+   $conn->query("CREATE DATABASE IF NOT EXISTS students_db");
 }
 //create table when the database "students" is selected
 if(mysqli_select_db($conn,"students_db")){
