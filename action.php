@@ -55,7 +55,7 @@ if(mysqli_select_db($conn,"students_db")){
         $result = $conn->query("SELECT fname, sname FROM student_info ");
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                echo $row['fname']." ".$row['sname'];
+                echo "{$row['fname']} {$row['sname']}";
                 echo "<br>";
             }
         }else{
